@@ -277,7 +277,7 @@ def lexico(codigo):
     return token
 
 try:
-    with open("cod.txt", "r", encoding="utf-8") as archivo:
+    with open("cod3.txt", "r", encoding="utf-8") as archivo:
         codigo_fuente = archivo.read()
 
     print("Código fuente leído:\n")

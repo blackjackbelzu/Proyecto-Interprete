@@ -1,3 +1,4 @@
+$3. Promedio general y conteo de aprobados y reprobados
 gantz i, aprobado45, reprobados, nota; $hola
 gleit suma, promedio;
 i = 1;
