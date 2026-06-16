@@ -179,7 +179,7 @@ def lexico(codigo):
             elif c.isalpha() or c == "_":
                 return "Error léxico: identificador debe comenzar con una letra "
             else:
-                return  f"Error léxico: número decimal inválido '{palabra}'"
+                return  f"Error léxico: número decimal inválido'"
 
         # REAL
         elif estado == 4100:
