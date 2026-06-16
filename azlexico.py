@@ -191,7 +191,7 @@ def lexico(codigo):
                 parte_entera = palabra.split(".")[0]
 
                 if len(parte_entera) > 1 and parte_entera[0] == "0":
-                    return "Error léxico: número real no puede contener mas de un cero"
+                    return "Error léxico: ceros a la izquierda no permitidos"
                 token.append(4100)
                 palabra = ""
                 estado = 0
