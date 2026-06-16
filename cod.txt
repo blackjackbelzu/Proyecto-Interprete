@@ -1,0 +1,24 @@
+gantz i, aprobado45, reprobados, nota; $hola
+gleit suma, promedio;
+i = 1;
+aprobados = 0;
+reprobados = 0;
+suma = 0;
+wahr (i <= 5) {
+    nota = i * 15; $Simulacion de notas
+    druck("nota del estudiante", i, ": ", nota);
+    suma = suma + nota;
+    wen (nota >= 51) {
+        aprobados = aprobados + 1;
+    } son {
+        reprobados = reprobados + 1;
+    }
+
+    i = i + 1;
+}
+
+promedio = suma / 5;
+
+druck("promedio general: ", promedio);
+druck("aprobados: ", aprobados);
+druck("reprobados: ", reprobados);
