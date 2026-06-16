@@ -106,7 +106,7 @@ def lexico(codigo):
                 continue
 
             else:
-                return f"Error caracter invalido '{c}' ASCII={ord(c)} posicion={i} estado={estado}"
+                return f"Error caracter invalido '{c}' posicion={i}"
 
         # IDENTIFICADORES
         elif estado == 6000:
