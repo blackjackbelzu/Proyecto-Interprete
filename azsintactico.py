@@ -168,7 +168,7 @@ def expresion(tokens,i):
 
     return i,""
 
-#ermino =factor { ("*" | "/" | "%") factor } 
+#termino =factor { ("*" | "/" | "%") factor } 
 def termino(tokens,i):
     i,error=factor(tokens,i)
     if error!="":
@@ -512,7 +512,7 @@ def cadena(tokens,i):
 
 
 #INGRESO DE TOKENS POR ARCHIVO Y LLAMADA AL LEXICO
-with open("cod2.txt", "r", encoding="utf-8") as archivo:
+with open("cod1.txt", "r", encoding="utf-8") as archivo:
     codigo = archivo.read()
 
 lista_tokens = lexico(codigo)
