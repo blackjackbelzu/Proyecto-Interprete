@@ -4,16 +4,27 @@ gantz opcion, a, b, resultado;
 a = 20; b = 4;
 opcion = 3;
 
-druck("Menu:"); druck("1. Suma"); druck("2. Resta");
-druck("3. Multiplicacion"); druck("4. Division");
+druck("Menu:"); 
+druck("1. Suma"); 
+druck("2. Resta");
+druck("3. Multiplicacion"); 
+druck("4. Division");
 
-Wen (opcion == 1) { resultado = a + b;
-druck("Resultado: ", resultado); } sonwen (opcion == 2) {
-resultado = a - b; druck("Resultado: ", resultado);
-} sonwen (opcion == 3) { resultado = a * b; druck("Resultado: ", resultado);
-} sonwen (opcion == 4) { Wen (b <> 0) {
-resultado = a / b; druck("Resultado: ", resultado);
+wen (opcion == 1) { 
+    resultado = a + b;
+    druck("Resultado: ", resultado); 
+    } sonwen (opcion == 2) {
+    resultado = a - b; 
+    druck("Resultado: ", resultado);
+} sonwen (opcion == 3) { 
+    resultado = a * b; 
+    druck("Resultado: ", resultado);
+} sonwen (opcion == 4) { wen (b <> 0) {
+    resultado = a / b; 
+    druck("Resultado: ", resultado);
 } son {
-druck("Error: division por cero"); }
+    druck("Error: division por cero"); 
+    }
 } son {
-druck("Opcion invalida"); }
+    druck("Opcion invalida"); 
+}

@@ -1,6 +1,6 @@
 def lexico(codigo):
     
-    codigo = codigo + " "
+    codigo = codigo + "\n"
     token = []
 
     i = 0
@@ -8,9 +8,9 @@ def lexico(codigo):
 
     estado = 0
     palabra = ""
+    tipo_comilla=""
 
     while i < n:
-
         c = codigo[i]
 
         # ESTADO INICIAL
@@ -61,7 +61,7 @@ def lexico(codigo):
                 i+=1
                 estado=204
                 continue
-            #operadores relacionales
+            #operadores relacionales/Asignacion
             elif c=="<":
                 i+=1
                 estado=-3
@@ -134,7 +134,7 @@ def lexico(codigo):
                     "oder":110
                 }
 
-                if palabra in reservadas:
+                if palabra.lower() in reservadas:
                     token.append(reservadas[palabra])
                 else:
                     token.append(6000) # IDENTIFICADOR
@@ -223,35 +223,35 @@ def lexico(codigo):
             token.append(estado)
             estado=0
             continue
-        elif estado==-3:
-            if c==">":
+        elif estado==-3: #Viene de "<"
+            if c==">":   #<> diferente
                 i+=1
                 estado=210
                 continue
-            elif c=="=":
+            elif c=="=": #<=
                 i+=1
                 estado=216
                 continue
             else:
-                #Es <
+                # <
                 estado=211
                 continue
-        elif estado==-4:
-            if c=="=":
+        elif estado==-4: #Viene de ">"
+            if c=="=": #>=
                 i+=1
                 estado=215
                 continue
             else:
-                
+                #>
                 estado=212
                 continue
-        elif estado==-6:
-            if c=="=":
+        elif estado==-6: #Viene de un "="
+            if c=="=": #==
                 i+=1
                 estado=213
                 continue
             else:
-                
+                #=
                 estado=220
                 continue
         elif estado==239:
@@ -276,8 +276,10 @@ def lexico(codigo):
     
     return token
 
+
+#TRADUCCION DE CODIGO FUENTE A TOKENS POR ARCHIVO
 try:
-    with open("cod3.txt", "r", encoding="utf-8") as archivo:
+    with open("cod2.txt", "r", encoding="utf-8") as archivo:
         codigo_fuente = archivo.read()
 
     print("Código fuente leído:\n")
@@ -290,4 +292,5 @@ except FileNotFoundError:
     print("Error: no se encontró el archivo programa.txt")
 
 except Exception as e:
-    print(f"Error al leer el archivo: {e}")                  
+    print(f"Error al leer el archivo: {e}")   
+            

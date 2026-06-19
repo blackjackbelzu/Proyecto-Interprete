@@ -1,21 +1,35 @@
 $2. Cambio de Tipo con wechsel y Simulacion de Control deAcceso(Terminal)
 
-kette dato; gantz numero; gleit real;
+kette dato; 
+gantz numero; 
+gleit real;
 
-dato = "texto inicial"; druck("dato: ", dato);
+dato = "texto inicial"; 
+druck("dato: ", dato);
 
-wechsel dato = 100; numero = dato + 50; druck("numero: ", numero);
+wechsel dato = 100; 
+numero = dato + 50; 
+druck("numero: ", numero);
 
-wechsel dato = 3.5; real = dato * 2; druck("real: ", real);
+wechsel dato = 3.5; 
+real = dato * 2; 
+druck("real: ", real);
 
-$Simulacion de acceso gantz edad, permiso; kette mensaje;
+$Simulacion de acceso 
+gantz edad, permiso; 
+kette mensaje;
 
-edad = 17; permiso = 1;
+edad = 17; 
+permiso = 1;
 
-wen ((edad >= 18) und (permiso == 1)) { mensaje = "acceso permitido";
-} sonwen ((edad >= 18) und (permiso == 0)) { mensaje = "falta permiso";
-} sonwen ((edad < 18) und (permiso == 1)) { mensaje = "menor con permiso especial";
+wen ((edad >= 18) und (permiso == 1)) { 
+    mensaje = "acceso permitido";
+} sonwen ((edad >= 18) und (permiso == 0)) { 
+    mensaje = "falta permiso";
+} sonwen ((edad < 18) und (permiso == 1)) { 
+    mensaje = "menor con permiso especial";
 } son {
-mensaje = "acceso denegado"; }
+    mensaje = "acceso denegado"; 
+}
 
 druck("estado: ", mensaje);
