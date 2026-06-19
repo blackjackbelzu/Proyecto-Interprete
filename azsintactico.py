@@ -9,7 +9,7 @@ def programa(tokens):
         return error
     
     if i<len(tokens):
-        return f"Error sintáctico: Símbolo inesperado '{tokens[i]}' en posición {i}"
+        return f"Error sintáctico: Símbolos inesperados '{tokens[i]}' en posición {i}"
 
     return "Valido"
 
@@ -58,7 +58,7 @@ def declaracion(tokens,i):
     if i<len(tokens) and tokens[i]==235:
         i+=1
     else:
-        return i, f"Error sintáctico: se esperaba ; para cerrer declaracion, se encontro '{tokens[i]}' en posición {i}"
+        return i, f"Error sintáctico: se esperaba ; para cerrar declaracion '{tokens[i]}' en posición {i}"
 
     return i,""
 
@@ -72,7 +72,7 @@ def tipo(tokens,i):
     elif i<len(tokens) and tokens[i]==102:
         i+=1
     else:
-        return i, f"Error: Se esperaba iniciar tipo de variable gantz | gleit |kette '{tokens[i]}' en posicion {i}"
+        return i, f"Error: Se esperaba iniciar con tipo de variable gantz | gleit |kette '{tokens[i]}' en posicion {i}"
 
     return i,""
 
@@ -89,7 +89,7 @@ def lista_variables(tokens,i):
         if i<len(tokens) and tokens[i]==234:
             i+=1
         else:
-            return i, f"Error: Se esperaba (,)  para listar variables '{tokens[i]}' en posicion {i}"
+            return i, f"Error: Se esperaba ,  para listar variables '{tokens[i]}' en posicion {i}"
         
         if i<len(tokens) and tokens[i]==6000:
             i+=1
@@ -516,7 +516,6 @@ with open("cod2.txt", "r", encoding="utf-8") as archivo:
     codigo = archivo.read()
 
 lista_tokens = lexico(codigo)
-print("LISTA DE TOKENS DE ANALIZADOR LEXICO:")
 
 # Si el léxico devuelve un error
 if isinstance(lista_tokens, str):
