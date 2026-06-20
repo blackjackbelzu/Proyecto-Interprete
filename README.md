@@ -58,6 +58,7 @@ Cree o Edite el archivo texto plano suministrado con su extension "nombre del ar
 cod2.txt
 ```
 con el programa que se desea analizar.
+
 Ingrese al archivo y cambie el nombre del archivo en la linea 282 en el archivo azlexico.py:
 
     with open("cod2.txt", "r", encoding="utf-8") as archivo:
@@ -67,15 +68,15 @@ Ingrese al archivo y cambie el nombre del archivo en la linea 515 en el archivo 
 
     with open("cod1.txt", "r", encoding="utf-8") as archivo:
 
-Luego ejecutar
+Luego ejecutar en el terminal
 Para ejecutar sintactico.
 
 ```bash
 python azsintactico.py
 ```
 
-Luego ejecutar
-Para ejecutar sintactico.
+Luego ejecutar en el terminal
+Para ejecutar lexico.
 
 ```bash
 python azlexico.py
