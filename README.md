@@ -58,22 +58,37 @@ Cree o Edite el archivo texto plano suministrado con su extension "nombre del ar
 cod2.txt
 ```
 con el programa que se desea analizar.
+Ingrese al archivo y cambie el nombre del archivo en la linea 282 en el archivo azlexico.py:
 
-Ingrese el nombre del archivo en la linea 515 en el archivo azsintactico.py:
-with open("cod1.txt", "r", encoding="utf-8") as archivo:
+    with open("cod2.txt", "r", encoding="utf-8") as archivo:
+
+
+Ingrese al archivo y cambie el nombre del archivo en la linea 515 en el archivo azsintactico.py:
+
+    with open("cod1.txt", "r", encoding="utf-8") as archivo:
 
 Luego ejecutar
+Para ejecutar sintactico.
 
 ```bash
 python azsintactico.py
 ```
 
+Luego ejecutar
+Para ejecutar sintactico.
+
+```bash
+python azlexico.py
+```
+
 El programa ejecutará automáticamente:
 
 1. Analizador Léxico
-2. Analizador Sintáctico
+Mostrando los tokens generados. Ademas de errores que pueda tener el lexico.
 
-Mostrando los tokens generados y el resultado del análisis. Ademas de errores que pueda tener el codigo.
+2. Analizador Sintáctico
+Mostrando los tokens generados y el resultado del análisis. Ademas de errores que pueda tener el sintactico.
+
 
 ## Lenguaje soportado
 
