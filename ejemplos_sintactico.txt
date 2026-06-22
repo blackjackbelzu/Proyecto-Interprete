@@ -1,0 +1,11 @@
+gantz op, su1;
+
+num = dat + 50.2*4;
+
+wechsel dat =10;
+
+wen ((a==1) und (b>1)){c="BO";}
+                       
+wahr (i <= 5){i = i + 1;}
+
+druck("a: ", r);

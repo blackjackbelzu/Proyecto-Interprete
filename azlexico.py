@@ -278,19 +278,19 @@ def lexico(codigo):
 
 
 #TRADUCCION DE CODIGO FUENTE A TOKENS POR ARCHIVO
-try:
-    with open("cod2.txt", "r", encoding="utf-8") as archivo:
-        codigo_fuente = archivo.read()
+if __name__ == "__main__":
+    
+    archivo = input("Ingrese el nombre del archivo(Ejemplo: cod.txt): ")
 
-    print("Código fuente leído:\n")
-    print(codigo_fuente)
+    try:
+        with open(archivo,"r",encoding="utf-8") as f:
+            codigo_fuente = f.read()
+        print("\nCODIGO FUENTE:\n")
+        print(codigo_fuente)
+        print("\nTOKENS:")
+        print(lexico(codigo_fuente))
 
-    print("\nLista de Tokens generada:")
-    print(lexico(codigo_fuente))
-
-except FileNotFoundError:
-    print("Error: no se encontró el archivo programa.txt")
-
-except Exception as e:
-    print(f"Error al leer el archivo: {e}")   
-            
+    except FileNotFoundError:
+        print("Error: archivo no encontrado." )
+    except Exception as e:
+        print(e)

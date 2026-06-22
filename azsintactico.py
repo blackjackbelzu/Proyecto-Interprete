@@ -10,11 +10,9 @@ def programa(tokens):
     
     if i<len(tokens):
         return f"Error sintáctico: Símbolos inesperados '{tokens[i]}' en posición {i}"
-
     return "Valido"
 
 #lista_sentencias = { sentencia } 
-
 def lista_sentencias(tokens, i):
 
     while i < len(tokens) and tokens[i] in (100, 101, 102, 103, 106, 107, 108, 239, 6000):
@@ -26,7 +24,7 @@ def lista_sentencias(tokens, i):
 #sentencia = declaracion | asignacion | cambio_tipo | si | mientras | imprimir| comentario 
 def sentencia(tokens,i):
 
-    if i < len(tokens) and tokens[i] in (100, 101, 102):
+    if i < len(tokens) and tokens[i] in (101, 100, 102):
         return declaracion(tokens, i)
     elif i < len(tokens) and tokens[i] == 6000:
         return asignacion(tokens, i)
@@ -512,24 +510,22 @@ def cadena(tokens,i):
 
 
 #INGRESO DE TOKENS POR ARCHIVO Y LLAMADA AL LEXICO
-with open("cod1.txt", "r", encoding="utf-8") as archivo:
-    codigo = archivo.read()
+if __name__ == "__main__":
+    
+    archivo = input("Ingrese el nombre del archivo(Ejemplo: cod.txt): ")
 
-lista_tokens = lexico(codigo)
+    try:
 
-# Si el léxico devuelve un error
-if isinstance(lista_tokens, str):
-    print(lista_tokens)
-else:
-    print("\nANALIZADOR SINTACTICO RESULTADO:")
-    print(programa(lista_tokens))
+        with open(archivo,"r",encoding="utf-8") as f:
+            codigo = f.read()
 
-
-#INGRESO DE TOKENS MANUAL
-'''
-lista_tokens=[239, 7000, 102, 6000, 235, 100, 6000, 235, 
-              101, 6000, 235, 6000, 220, 238, 5000, 238, 235, 107, 230, 238, 5000, 238, 234, 6000, 231, 235, 108, 6000, 220, 
-              4000, 235, 6000, 220, 6000, 200, 4000, 235, 107, 230, 238, 
-              5000, 238, 234, 6000, 231, 235, 108, 6000, 220, 4100, 235, 6000, 220, 6000, 202, 4000, 235, 107, 230, 238, 5000, 238, 234, 6000, 231, 235, 239, 7000, 100, 6000, 234, 6000, 235, 102, 6000, 235, 6000, 220, 4000, 235, 6000, 220, 4000, 235, 103, 230, 230, 6000, 215, 4000, 231, 109, 230, 6000, 213, 4000, 231, 231, 232, 6000, 220, 238, 5000, 238, 235, 233, 105, 230, 230, 6000, 215, 4000, 231, 109, 230, 6000, 213, 4000, 231, 231, 232, 6000, 220, 238, 5000, 238, 235, 233, 105, 230, 230, 6000, 211, 4000, 231, 109, 230, 6000, 213, 4000, 231, 231, 232, 6000, 220, 238, 5000, 238, 235, 233, 104, 232, 6000, 220, 238, 5000, 238, 235, 233, 107, 230, 238, 5000, 238, 234, 6000, 231, 235]
-print(programa(lista_tokens))
-'''
+        tokens = lexico(codigo)
+        if isinstance(tokens, str):
+            print(tokens)
+        else:
+            programa(tokens)
+            print("\nAnalisis sintactico valido.")
+    except FileNotFoundError:
+        print("Error: archivo no encontrado.")
+    except Exception as e:
+        print(e)
