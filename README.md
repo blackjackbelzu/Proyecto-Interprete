@@ -37,8 +37,14 @@ Proyecto-Interprete/
 ├── ejemplos_semantica.txt
 │
 ├── error1.txt            Programa con errores
+├── link para videos.txt  videos realizado en un unico link
 │
 └── README.md
+```
+##Videos
+
+```text
+https://drive.google.com/drive/folders/1DIW_OWqKNbIUP3mvMei-ZFpdKjSgmg_l
 ```
 
 ## REQUISITOS
