@@ -511,21 +511,22 @@ def cadena(tokens,i):
 
 #INGRESO DE TOKENS POR ARCHIVO Y LLAMADA AL LEXICO
 if __name__ == "__main__":
-    
-    archivo = input("Ingrese el nombre del archivo(Ejemplo: cod.txt): ")
-
+    archivo = input("Ingrese el nombre del archivo (Ejemplo: cod.txt): ")
     try:
-
-        with open(archivo,"r",encoding="utf-8") as f:
+        with open(archivo, "r", encoding="utf-8") as f:
             codigo = f.read()
-
         tokens = lexico(codigo)
+
         if isinstance(tokens, str):
             print(tokens)
         else:
-            programa(tokens)
-            print("\nAnalisis sintactico valido.")
+            resultado = programa(tokens)
+
+            if resultado == "Valido":
+                print("\nAnálisis sintáctico válido.")
+            else:
+                print("\n" + resultado)
     except FileNotFoundError:
         print("Error: archivo no encontrado.")
     except Exception as e:
-        print(e)
+        print(f"Error inesperado: {e}")
