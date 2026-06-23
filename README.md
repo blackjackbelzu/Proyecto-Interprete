@@ -1,5 +1,4 @@
-#PROYECTO DESARROLLO DE UN INTÉRPRETE PARA EL LENGUAJE ALCHEMISTGOLD
-
+# PROYECTO DESARROLLO DE UN INTÉRPRETE PARA EL LENGUAJE ALCHEMISTGOLD
 
 Proyecto desarrollado para la asignatura de Compiladores.
 
@@ -7,7 +6,7 @@ El objetivo del proyecto es implementar las fases preliminares de un
 intérprete para el lenguaje AlchemistGold, realizando el análisis de un
 programa fuente hasta la generación de su representación intermedia.
 
-##CARACTERÍSTICAS
+## CARACTERÍSTICAS
 
 El proyecto implementa las siguientes fases:
 
@@ -19,7 +18,7 @@ El proyecto implementa las siguientes fases:
 - Generación de Tercetos
 - Detección y reporte de errores léxicos, sintácticos y semánticos
 
-##ESTRUCTURA DEL PROYECTO
+## ESTRUCTURA DEL PROYECTO
 
 ```text
 Proyecto-Interprete/
@@ -42,7 +41,7 @@ Proyecto-Interprete/
 └── README.md
 ```
 
-##REQUISITOS
+## REQUISITOS
 
 - Python 3.13 o superior
 
@@ -50,8 +49,7 @@ Verificar instalación:
 
 python --version
 
-##INSTALACIÓN
-
+## INSTALACIÓN
 
 1. Clonar el repositorio
 
@@ -63,7 +61,7 @@ cd Proyecto-Interprete
 
 No es necesario instalar librerías adicionales.
 
-##EJECUCIÓN
+## EJECUCIÓN
 
 Ejecutar el programa principal:
 
@@ -83,7 +81,7 @@ Luego preguntará si desea analizar otro archivo.
 
 Desea analizar otro archivo (S/N):
 
-##EJECUCIÓN SOLITARIA DE LOS PROGRAMAS
+## EJECUCIÓN SOLITARIA DE LOS PROGRAMAS
 
 Ejecutar el programa principal:
 ```bash
@@ -110,8 +108,9 @@ Luego preguntará si desea analizar otro archivo.
 
 Desea analizar otro archivo (S/N):
 
-##FLUJO DEL INTÉRPRETE
+## FLUJO DEL INTÉRPRETE
 
+```text
 Código Fuente
       │
       ▼
@@ -131,8 +130,9 @@ Generación de Cuartetos
       │
       ▼
 Generación de Tercetos
+```
 
-##ANÁLISIS LÉXICO
+## ANÁLISIS LÉXICO
 
 Durante esta fase se identifican:
 
@@ -154,7 +154,7 @@ Además detecta errores como:
 - Números mal formados
 - Identificadores inválidos
 
-##ANÁLISIS SINTÁCTICO
+## ANÁLISIS SINTÁCTICO
 
 El analizador sintáctico verifica que el programa cumpla con la
 gramática definida mediante un parser descendente recursivo.
@@ -170,7 +170,7 @@ Reconoce estructuras como:
 - Impresión
 - Comentarios
 
-##ANÁLISIS SEMÁNTICO
+## ANÁLISIS SEMÁNTICO
 
 Durante esta etapa se realiza:
 
@@ -180,7 +180,7 @@ Durante esta etapa se realiza:
 - Validación de expresiones
 - Detección de errores semánticos
 
-##LENGUAJE ALCHEMISTGOLD
+## LENGUAJE ALCHEMISTGOLD
 
 Tipos de datos
 
@@ -200,7 +200,7 @@ Sentencias soportadas
 - Impresión (druck)
 - Comentarios ($)
 
-##EJEMPLO DE CÓDIGO
+## EJEMPLO DE CÓDIGO
 
 gantz a, b;
 gleit x;
@@ -225,7 +225,7 @@ x = (a + b) * 3;
 
 wechsel mensaje = "Proceso terminado";
 
-##ARCHIVOS DE PRUEBA
+## ARCHIVOS DE PRUEBA
 
 cod1.txt
 Programa válido.
@@ -248,7 +248,7 @@ Ejemplos para el análisis sintáctico.
 ejemplos_semantica.txt
 Ejemplos para el análisis semántico.
 
-##SALIDA DEL PROGRAMA
+## SALIDA DEL PROGRAMA
 
 ANALISIS LEXICO
 
@@ -258,7 +258,7 @@ ANALISIS SINTACTICO
 
 Analisis sintactico valido.
 
-ANALISIS SEMANTICO
+## ANALISIS SEMANTICO
 
 Infija:
 x = a + b * c
@@ -278,16 +278,16 @@ TERCETOS
 
 Analisis semantico valido.
 
-##TECNOLOGÍAS UTILIZADAS
+## TECNOLOGÍAS UTILIZADAS
 
-- Python 3
+- Python 3.13.7
 - Parser Descendente Recursivo
 - Autómata Finito Determinista (AFD)
 - Conversión Infija → Postfija
 - Representación Intermedia mediante Cuartetos
 - Representación Intermedia mediante Tercetos
 
-##AUTOR
+## AUTOR
 
 Gustavo Belzu Ríos
 
