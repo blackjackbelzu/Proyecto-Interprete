@@ -1,120 +1,314 @@
-# Proyecto Desarrollo de un Intérprete para el lenguaje AlchemistGold
+===========================================================
+PROYECTO DESARROLLO DE UN INTÉRPRETE PARA EL LENGUAJE
+ALCHEMISTGOLD
+===========================================================
 
-Proyecto desarrollado para la materia de Compiladores.
+Proyecto desarrollado para la asignatura de Compiladores.
 
-Este proyecto implementa un intérprete para un lenguaje de Alchemist, incluyendo:
+El objetivo del proyecto es implementar las fases preliminares de un
+intérprete para el lenguaje AlchemistGold, realizando el análisis de un
+programa fuente hasta la generación de su representación intermedia.
 
-- Analizador Léxico
-- Analizador Sintáctico 
-- Analizador Semántico
-- codigos fuente de prueba
-- Manejo de errores 
+===========================================================
+CARACTERÍSTICAS
+===========================================================
 
-## Estructura del proyecto
+El proyecto implementa las siguientes fases:
 
-```
+- Análisis Léxico
+- Análisis Sintáctico
+- Análisis Semántico
+- Conversión de expresiones infijas a postfijas
+- Generación de Cuartetos
+- Generación de Tercetos
+- Detección y reporte de errores léxicos, sintácticos y semánticos
+
+===========================================================
+ESTRUCTURA DEL PROYECTO
+===========================================================
+
 Proyecto-Interprete/
 │
-├── azlexico.py          # Analizador léxico
-├── sintactico.py        # Analizador sintáctico
-├── cod1.txt             # Código fuente de prueba
-├── cod2.txt             # Código fuente de prueba
-├── cod3.txt             # Código fuente de prueba
+├── azlexico.py           Analizador Léxico
+├── azsintactico.py       Analizador Sintáctico
+├── azsemantico.py        Analizador Semántico
+├── main.py               Programa Principal
+│
+├── cod1.txt              Programa de prueba
+├── cod2.txt              Programa de prueba
+├── cod3.txt              Programa de prueba
+│
+├── ejemplos_lexico.txt
+├── ejemplos_sintactico.txt
+├── ejemplos_semantica.txt
+│
+├── error1.txt            Programa con errores
+│
 └── README.md
-```
 
-## Requisitos
+===========================================================
+REQUISITOS
+===========================================================
 
-- Python 3.13.7
+- Python 3.13 o superior
 
-Verificar la instalación:
+Verificar instalación:
 
-```bash
 python --version
-```
 
-## Instalación
+===========================================================
+INSTALACIÓN
+===========================================================
 
-### 1. Si desea Clonar el repositorio
-- Instale Visual Studio Code en su maquina
-- Instale Git en su maquina
-- Registrese en GitHub
-- Instale Extension Python Visual Studio Code
-- Abra una terminal en una carpeta cualquiera
-- Realize el siguiente comando 
-```bash
+1. Clonar el repositorio
+
 git clone https://github.com/blackjackbelzu/Proyecto-Interprete.git
-```
 
-### 2. Entrar al proyecto
+2. Ingresar al proyecto
 
-```bash
 cd Proyecto-Interprete
-```
 
-## Ejecución
-Cree o Edite el archivo texto plano suministrado con su extension "nombre del archivo.txt"
-```
+No es necesario instalar librerías adicionales.
+
+===========================================================
+EJECUCIÓN
+===========================================================
+
+Ejecutar el programa principal:
+
+python main.py
+
+El sistema solicitará el nombre del archivo a analizar.
+
+Ejemplo:
+
+Ingrese el nombre del archivo (Ejemplo: cod.txt):
+
 cod2.txt
-```
-con el programa que se desea analizar.
 
-Ingrese al archivo y cambie el nombre del archivo en la linea 282 en el archivo azlexico.py:
+Luego preguntará si desea analizar otro archivo.
 
-    with open("cod2.txt", "r", encoding="utf-8") as archivo:
+Desea analizar otro archivo (S/N):
+===========================================================
+EJECUCIÓN SOLITARIA DE LOS PROGRAMAS
+===========================================================
+Ejecutar el programa principal:
 
+python azlexico.py o python azsintactico.py  o python azsemantico.py 
 
-Ingrese al archivo y cambie el nombre del archivo en la linea 515 en el archivo azsintactico.py:
+El sistema solicitará el nombre del archivo a analizar.
 
-    with open("cod1.txt", "r", encoding="utf-8") as archivo:
+Ejemplo:
 
-Luego ejecutar en el terminal
-Para ejecutar sintactico.
+Ingrese el nombre del archivo (Ejemplo: cod.txt):
 
-```bash
-python azsintactico.py
-```
+cod3.txt
 
-Luego ejecutar en el terminal
-Para ejecutar lexico.
+Luego preguntará si desea analizar otro archivo.
 
-```bash
-python azlexico.py
-```
+Desea analizar otro archivo (S/N):
 
-El programa ejecutará automáticamente:
+===========================================================
+FLUJO DEL INTÉRPRETE
+===========================================================
 
-1. Analizador Léxico
-Mostrando los tokens generados. Ademas de errores que pueda tener el lexico.
+Código Fuente
+      │
+      ▼
+Análisis Léxico
+      │
+      ▼
+Análisis Sintáctico
+      │
+      ▼
+Análisis Semántico
+      │
+      ▼
+Conversión Infija → Postfija
+      │
+      ▼
+Generación de Cuartetos
+      │
+      ▼
+Generación de Tercetos
 
-2. Analizador Sintáctico
-Mostrando los tokens generados y el resultado del análisis. Ademas de errores que pueda tener el sintactico.
+===========================================================
+ANÁLISIS LÉXICO
+===========================================================
 
+Durante esta fase se identifican:
 
-## Lenguaje soportado
+- Palabras reservadas
+- Identificadores
+- Números enteros
+- Números reales
+- Cadenas
+- Operadores aritméticos
+- Operadores relacionales
+- Operadores de asignación
+- Símbolos especiales
+- Comentarios
 
-El lenguaje implementa:
+Además detecta errores como:
+
+- Caracteres inválidos
+- Cadenas no cerradas
+- Números mal formados
+- Identificadores inválidos
+
+===========================================================
+ANÁLISIS SINTÁCTICO
+===========================================================
+
+El analizador sintáctico verifica que el programa cumpla con la
+gramática definida mediante un parser descendente recursivo.
+
+Reconoce estructuras como:
+
+- Declaraciones
+- Asignaciones
+- Cambio de tipo
+- Expresiones aritméticas
+- Condicionales
+- Ciclos
+- Impresión
+- Comentarios
+
+===========================================================
+ANÁLISIS SEMÁNTICO
+===========================================================
+
+Durante esta etapa se realiza:
+
+- Conversión de expresiones infijas a postfijas
+- Generación de Cuartetos
+- Generación de Tercetos
+- Validación de expresiones
+- Detección de errores semánticos
+
+===========================================================
+LENGUAJE ALCHEMISTGOLD
+===========================================================
+
+Tipos de datos
+
+gantz
+gleit
+kette
+
+Sentencias soportadas
 
 - Declaración de variables
-- Asignaciones
-- Cambio de tipo (`wechsel`)
-- Condicionales (`wen`, `sonwen`, `son`)
-- Ciclos (`wahr`)
-- Impresión (`druck`)
-- Comentarios (`$`)
-- Expresiones aritméticas
-- Expresiones lógicas
+- Asignación
+- Cambio de tipo (wechsel)
+- Condicional (wen)
+- Else If (sonwen)
+- Else (son)
+- Ciclo (wahr)
+- Impresión (druck)
+- Comentarios ($)
 
-## Ejemplo
+===========================================================
+EJEMPLO DE CÓDIGO
+===========================================================
 
-```txt
-gantz x;
+gantz a, b;
+gleit x;
+kette mensaje;
 
-x = 5;
+a = 10;
+b = 20;
 
-druck("Valor:", x);
-```
+wen (a < b) {
 
-## Autores
+    druck("A es menor");
 
-- Gustavo Belzu Rios 
+}
+
+son {
+
+    druck("A no es menor");
+
+}
+
+x = (a + b) * 3;
+
+wechsel mensaje = "Proceso terminado";
+
+===========================================================
+ARCHIVOS DE PRUEBA
+===========================================================
+
+cod1.txt
+Programa válido.
+
+cod2.txt
+Programa válido.
+
+cod3.txt
+Programa válido.
+
+error1.txt
+Programa con errores.
+
+ejemplos_lexico.txt
+Ejemplos para el análisis léxico.
+
+ejemplos_sintactico.txt
+Ejemplos para el análisis sintáctico.
+
+ejemplos_semantica.txt
+Ejemplos para el análisis semántico.
+
+===========================================================
+SALIDA DEL PROGRAMA
+===========================================================
+
+ANALISIS LEXICO
+
+[100, 6000, 235, ...]
+
+ANALISIS SINTACTICO
+
+Analisis sintactico valido.
+
+ANALISIS SEMANTICO
+
+Infija:
+x = a + b * c
+
+POSTFIJA:
+abc*+
+
+CUARTETOS
+
+1 : (*, b, c, T1)
+2 : (+, a, T1, T2)
+
+TERCETOS
+
+1 : (*, b, c)
+2 : (+, a, (1))
+
+Analisis semantico valido.
+
+===========================================================
+TECNOLOGÍAS UTILIZADAS
+===========================================================
+
+- Python 3
+- Parser Descendente Recursivo
+- Autómata Finito Determinista (AFD)
+- Conversión Infija → Postfija
+- Representación Intermedia mediante Cuartetos
+- Representación Intermedia mediante Tercetos
+
+===========================================================
+AUTOR
+===========================================================
+
+Gustavo Belzu Ríos
+
+Proyecto desarrollado para la asignatura de Compiladores.
+Repositorio:
+https://github.com/blackjackbelzu/Proyecto-Interprete
