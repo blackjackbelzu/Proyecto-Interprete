@@ -1,7 +1,5 @@
-===========================================================
-PROYECTO DESARROLLO DE UN INTÉRPRETE PARA EL LENGUAJE
-ALCHEMISTGOLD
-===========================================================
+#PROYECTO DESARROLLO DE UN INTÉRPRETE PARA EL LENGUAJE ALCHEMISTGOLD
+
 
 Proyecto desarrollado para la asignatura de Compiladores.
 
@@ -9,9 +7,7 @@ El objetivo del proyecto es implementar las fases preliminares de un
 intérprete para el lenguaje AlchemistGold, realizando el análisis de un
 programa fuente hasta la generación de su representación intermedia.
 
-===========================================================
-CARACTERÍSTICAS
-===========================================================
+##CARACTERÍSTICAS
 
 El proyecto implementa las siguientes fases:
 
@@ -23,10 +19,9 @@ El proyecto implementa las siguientes fases:
 - Generación de Tercetos
 - Detección y reporte de errores léxicos, sintácticos y semánticos
 
-===========================================================
-ESTRUCTURA DEL PROYECTO
-===========================================================
+##ESTRUCTURA DEL PROYECTO
 
+```text
 Proyecto-Interprete/
 │
 ├── azlexico.py           Analizador Léxico
@@ -45,10 +40,9 @@ Proyecto-Interprete/
 ├── error1.txt            Programa con errores
 │
 └── README.md
+```
 
-===========================================================
-REQUISITOS
-===========================================================
+##REQUISITOS
 
 - Python 3.13 o superior
 
@@ -56,9 +50,8 @@ Verificar instalación:
 
 python --version
 
-===========================================================
-INSTALACIÓN
-===========================================================
+##INSTALACIÓN
+
 
 1. Clonar el repositorio
 
@@ -70,13 +63,13 @@ cd Proyecto-Interprete
 
 No es necesario instalar librerías adicionales.
 
-===========================================================
-EJECUCIÓN
-===========================================================
+##EJECUCIÓN
 
 Ejecutar el programa principal:
 
+```bash
 python main.py
+```
 
 El sistema solicitará el nombre del archivo a analizar.
 
@@ -89,12 +82,21 @@ cod2.txt
 Luego preguntará si desea analizar otro archivo.
 
 Desea analizar otro archivo (S/N):
-===========================================================
-EJECUCIÓN SOLITARIA DE LOS PROGRAMAS
-===========================================================
-Ejecutar el programa principal:
 
-python azlexico.py o python azsintactico.py  o python azsemantico.py 
+##EJECUCIÓN SOLITARIA DE LOS PROGRAMAS
+
+Ejecutar el programa principal:
+```bash
+python azlexico.py 
+```
+
+```bash
+python azsintactico.py
+```
+
+```bash
+python azsemantico.py 
+```
 
 El sistema solicitará el nombre del archivo a analizar.
 
@@ -108,9 +110,7 @@ Luego preguntará si desea analizar otro archivo.
 
 Desea analizar otro archivo (S/N):
 
-===========================================================
-FLUJO DEL INTÉRPRETE
-===========================================================
+##FLUJO DEL INTÉRPRETE
 
 Código Fuente
       │
@@ -132,9 +132,7 @@ Generación de Cuartetos
       ▼
 Generación de Tercetos
 
-===========================================================
-ANÁLISIS LÉXICO
-===========================================================
+##ANÁLISIS LÉXICO
 
 Durante esta fase se identifican:
 
@@ -156,9 +154,7 @@ Además detecta errores como:
 - Números mal formados
 - Identificadores inválidos
 
-===========================================================
-ANÁLISIS SINTÁCTICO
-===========================================================
+##ANÁLISIS SINTÁCTICO
 
 El analizador sintáctico verifica que el programa cumpla con la
 gramática definida mediante un parser descendente recursivo.
@@ -174,9 +170,7 @@ Reconoce estructuras como:
 - Impresión
 - Comentarios
 
-===========================================================
-ANÁLISIS SEMÁNTICO
-===========================================================
+##ANÁLISIS SEMÁNTICO
 
 Durante esta etapa se realiza:
 
@@ -186,9 +180,7 @@ Durante esta etapa se realiza:
 - Validación de expresiones
 - Detección de errores semánticos
 
-===========================================================
-LENGUAJE ALCHEMISTGOLD
-===========================================================
+##LENGUAJE ALCHEMISTGOLD
 
 Tipos de datos
 
@@ -208,9 +200,7 @@ Sentencias soportadas
 - Impresión (druck)
 - Comentarios ($)
 
-===========================================================
-EJEMPLO DE CÓDIGO
-===========================================================
+##EJEMPLO DE CÓDIGO
 
 gantz a, b;
 gleit x;
@@ -235,9 +225,7 @@ x = (a + b) * 3;
 
 wechsel mensaje = "Proceso terminado";
 
-===========================================================
-ARCHIVOS DE PRUEBA
-===========================================================
+##ARCHIVOS DE PRUEBA
 
 cod1.txt
 Programa válido.
@@ -260,9 +248,7 @@ Ejemplos para el análisis sintáctico.
 ejemplos_semantica.txt
 Ejemplos para el análisis semántico.
 
-===========================================================
-SALIDA DEL PROGRAMA
-===========================================================
+##SALIDA DEL PROGRAMA
 
 ANALISIS LEXICO
 
@@ -292,9 +278,7 @@ TERCETOS
 
 Analisis semantico valido.
 
-===========================================================
-TECNOLOGÍAS UTILIZADAS
-===========================================================
+##TECNOLOGÍAS UTILIZADAS
 
 - Python 3
 - Parser Descendente Recursivo
@@ -303,9 +287,7 @@ TECNOLOGÍAS UTILIZADAS
 - Representación Intermedia mediante Cuartetos
 - Representación Intermedia mediante Tercetos
 
-===========================================================
-AUTOR
-===========================================================
+##AUTOR
 
 Gustavo Belzu Ríos
 
