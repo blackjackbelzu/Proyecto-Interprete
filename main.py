@@ -3,7 +3,6 @@ from azsintactico import programa
 from azsemantico import semantico
 
 while True:
-
     print("\n-----------------------------------------------")
     print("ANALISIS DE PROGRAMAS DEL INTERPRETE ALCHEMISTGOLD")
     print("--------------------------------------------------")
@@ -18,16 +17,20 @@ while True:
         print("\nERROR: El archivo no existe.")
     else:
 
-        # ANALISIS LEXICO
+        # 1. ANALISIS LEXICO
         print("\nANALISIS LEXICO")
+        print("----------------------------------------")
         tokens = lexico(codigo)
 
         if isinstance(tokens, str):
-            print(tokens)
+            print(tokens) # Muestra el error si el léxico falló
         else:
+            print("\nTokens generados (IDs):")
             print(tokens)
+            print("» Análisis léxico  valido.")
 
-            # ANALISIS SINTACTICO
+
+            # 2. ANALISIS SINTACTICO
             print("\nANALISIS SINTACTICO")
             resultado = programa(tokens)
 
@@ -36,13 +39,14 @@ while True:
             else:
                 print("Analisis sintactico valido.")
 
-                # ANALISIS SEMANTICO
-                resultado = semantico(codigo)
+                # 3. ANALISIS SEMANTICO
+                # Le pasamos la lista de enteros 'tokens' y el 'codigo' fuente
+                resultado = semantico(tokens, codigo)
 
                 if resultado != "Valido":
                     print(resultado)
                 else:
-                    print("Analisis semantico valido.")
+                    print("\nAnalisis semantico valido.")
 
     respuesta = input("\nDesea analizar otro archivo (S/N): ")
 
