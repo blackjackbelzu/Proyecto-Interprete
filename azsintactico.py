@@ -1,5 +1,4 @@
 from azlexico import lexico
-
 #programa = lista_sentencias 
 def programa(tokens):
     error=""
@@ -507,8 +506,6 @@ def cadena(tokens,i):
         return i, f"Error sintáctico: se esperaba '\"' para cerrar cadena'{tokens[i]}' en posición {i}" 
 
     return i,""
-
-
 #INGRESO DE TOKENS POR ARCHIVO Y LLAMADA AL LEXICO
 if __name__ == "__main__":
     archivo = input("Ingrese el nombre del archivo (Ejemplo: cod.txt): ")

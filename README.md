@@ -232,21 +232,12 @@ x = (a + b) * 3;
 wechsel mensaje = "Proceso terminado";
 
 ## ARCHIVOS DE PRUEBA
-
+Ejemplos para el anáilisis lexico
 cod1.txt
-Programa válido.
 
 cod2.txt
-Programa válido.
 
 cod3.txt
-Programa válido.
-
-error1.txt
-Programa con errores.
-
-ejemplos_lexico.txt
-Ejemplos para el análisis léxico.
 
 ejemplos_sintactico.txt
 Ejemplos para el análisis sintáctico.
@@ -256,15 +247,17 @@ Ejemplos para el análisis semántico.
 
 ## SALIDA DEL PROGRAMA
 
-ANALISIS LEXICO
+ANALISIS LEXICO SALIDA:
 
 [100, 6000, 235, ...]
 
-ANALISIS SINTACTICO
+ANALISIS SINTACTICO SALIDA:
 
 Analisis sintactico valido.
 
 ## ANALISIS SEMANTICO
+
+ANALISIS SEMANTICO SALIDA:
 
 Infija:
 x = a + b * c

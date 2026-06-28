@@ -23,12 +23,16 @@ edad = 17;
 permiso = 1;
 
 wen ((edad >= 18) und (permiso == 1)) { 
+    
     mensaje = "acceso permitido";
 } sonwen ((edad >= 18) und (permiso == 0)) { 
+    
     mensaje = "falta permiso";
 } sonwen ((edad < 18) und (permiso == 1)) { 
+    
     mensaje = "menor con permiso especial";
 } son {
+   
     mensaje = "acceso denegado"; 
 }
 

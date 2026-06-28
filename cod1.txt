@@ -11,20 +11,26 @@ druck("3. Multiplicacion");
 druck("4. Division");
 
 wen (opcion == 1) { 
+    
     resultado = a + b;
     druck("Resultado: ", resultado); 
     } sonwen (opcion == 2) {
+    
     resultado = a - b; 
     druck("Resultado: ", resultado);
 } sonwen (opcion == 3) { 
+    
     resultado = a * b; 
     druck("Resultado: ", resultado);
 } sonwen (opcion == 4) { wen (b <> 0) {
+    
     resultado = a / b; 
     druck("Resultado: ", resultado);
 } son {
+    
     druck("Error: division por cero"); 
     }
 } son {
+    
     druck("Opcion invalida"); 
 }

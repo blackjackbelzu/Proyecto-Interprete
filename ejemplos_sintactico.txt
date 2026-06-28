@@ -1,3 +1,4 @@
+$Sentencias validas para probar:
 gantz op, su1;
 
 num = dat + 50.2*4;

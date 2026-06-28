@@ -1,5 +1,4 @@
 def lexico(codigo):
-    
     codigo = codigo + "\n"
     token = []
 
@@ -276,7 +275,6 @@ def lexico(codigo):
     
     return token
 
-
 #TRADUCCION DE CODIGO FUENTE A TOKENS POR ARCHIVO
 if __name__ == "__main__":
     
@@ -289,7 +287,6 @@ if __name__ == "__main__":
         print(codigo_fuente)
         print("\nTOKENS:")
         print(lexico(codigo_fuente))
-
     except FileNotFoundError:
         print("Error: archivo no encontrado." )
     except Exception as e:

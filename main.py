@@ -16,7 +16,6 @@ while True:
     except FileNotFoundError:
         print("\nERROR: El archivo no existe.")
     else:
-
         # 1. ANALISIS LEXICO
         print("\nANALISIS LEXICO")
         print("----------------------------------------")
@@ -28,8 +27,6 @@ while True:
             print("\nTokens generados (IDs):")
             print(tokens)
             print("» Análisis léxico  valido.")
-
-
             # 2. ANALISIS SINTACTICO
             print("\nANALISIS SINTACTICO")
             resultado = programa(tokens)
@@ -38,7 +35,6 @@ while True:
                 print(resultado)
             else:
                 print("Analisis sintactico valido.")
-
                 # 3. ANALISIS SEMANTICO
                 # Le pasamos la lista de enteros 'tokens' y el 'codigo' fuente
                 resultado = semantico(tokens, codigo)

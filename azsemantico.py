@@ -1,5 +1,4 @@
 from azlexico import lexico
-
 # Para convertir de infijo a posfijo
 def infposf(tokens):
     # precedencia
@@ -27,7 +26,6 @@ def infposf(tokens):
 
 ENTORNO = {"t": 1, "l": 1, "e": 1, "c": 1} # Almacena Cuarteto T, Etiqueta L, Terceto c
 PILA_BLOQUES, ETIQUETAS_FIN = [], [] # controla estructuras de control
-
 # Tabla de simbolos para imprimir las instrucciones
 TABLA_INVERSA = {
     100: "gantz", 101: "gleit", 102: "kette", 103: "wen", 
@@ -38,7 +36,6 @@ TABLA_INVERSA = {
     "=", 230: "(", 231: ")", 232: "{", 233: "}",
     234: ",", 235: ";", 238: '"', 239: "$"
 }
-
 # Generar Cuartetos
 def genCuarteto(postfija, destino=None, es_condicion=False, tipo_control="wen"):
     pila_c, cuartetos = [], []
@@ -62,7 +59,6 @@ def genCuarteto(postfija, destino=None, es_condicion=False, tipo_control="wen"):
     if destino and pila_c: 
         cuartetos.append(("=", pila_c[0], "_", destino))
     return cuartetos, None
-
 # Generar Tercetos para Expresiones Matemáticas / Condicionales
 def genTerceto(postfija, destino=None):
     pila_t, tercetos = [], []
@@ -243,7 +239,6 @@ def ejecucion_semantica_por_bloques(tokens_planos, codigo_fuente):
                 print(f"  • Despliegue Etiqueta de Fin -> (LABEL, {lbl})")
                 print(f"  • Terceto Despliegue Fin     -> {ENTORNO['c']} : ('LABEL', '{lbl_t}', '_')")
                 ENTORNO['c'] += 1
-
 
 def semantico(tokens_planos, codigo_fuente):
     try:
